@@ -1,0 +1,60 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Centering the board */
+  body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Light grey background */
+  }
+  
+  .board {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333; /* Dark border around the board */
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .square {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px; /* Size of the chess pieces */
+  }
+  
+  /* Alternating colors for the squares */
+  .row:nth-child(even) .square:nth-child(even) {
+    background-color: #333; /* Dark squares */
+  }
+  
+  .row:nth-child(odd) .square:nth-child(odd) {
+    background-color: #333; /* Dark squares */
+  }
+  
+  .row:nth-child(even) .square:nth-child(odd),
+  .row:nth-child(odd) .square:nth-child(even) {
+    background-color: #fff; /* Light squares */
+  }
+  
+  /* Unicode characters for chess pieces */
+  .square::before {
+    content: attr(data-piece); /* Unicode for the piece */
+    color: black; /* Black pieces color */
+  }
+  
+  /* Light pieces color */
+  .light::before {
+    color: white;
+  }
+  
